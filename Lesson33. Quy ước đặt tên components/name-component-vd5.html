@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReactJS</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+
+  <body>
+    <!-- làm việc với JSX
+    
+        Phần 1,
+    - Xử ;ý DOM events
+    - Component do chúng ta định nghĩa phải viểt hoa kí tự đầu 
+        - Chọn component trong 1 object
+    - Booleans, Null & Undefind không được render
+    - Kết hợp toán tử logic để render theo điều kiện 
+
+        Phần II.
+        - Props trong JSX
+            <YourComponent
+                propName1="String literals"
+                propName2={expression}
+                />
+            -Props dèault to true
+            - Spread/rest props
+            - Children prop
+                - <YourComponent>String literal</YourComonent>
+                - <YourComponent>{expression}</YourComponent>
+    -->
+    <div id="root"></div>
+
+    <script type="text/babel">
+      
+      //Container
+      function App({title}) {
+        let firstAccess = true
+        //false thì 0 render gì hết 
+        return (
+          <div id="wrapper">
+            {firstAccess && <h1>Welcome to F8</h1>}
+            <h1>{title ||content}</h1>
+          </div>
+        );
+      }
+
+      ReactDOM.render(<App title="Hello" />, document.getElementById("root"));
+    </script>
+  </body>
+</html>

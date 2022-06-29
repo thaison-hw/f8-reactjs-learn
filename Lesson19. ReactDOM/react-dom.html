@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.production.min.js"
+    ></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- 1. Tại sao phải sử dụng React
+        -> để ta có thể rander được react ra trình duyệt 
+        React-DOM là 1 thư viện, là cầu nối giữa React và DOM
+        React sẽ tạo ra React element và có thể dùng elememt đó render vào DOM
+
+        React-Native -> Ios, Android
+        Native? Là bản địa, là ngôn ngữ ta viết để nó biên dịch ra mã máy để chạy trên ĐT
+        react-native là cầu nối giữa React và Native
+
+
+        2. Tại sao lại tách React-DOM ra
+        Core React sẽ kết hợp hợp React-DOM hoặc React-Native để làm việc
+        3. Render UI
+    -->
+    <script>
+        const postItem = React.createElement(
+            'div', {
+                className: 'post-item'
+            },
+            React.createElement('h2',{
+                title: 'Học React tại F8'
+            },'Học ReactJS'),
+            React.createElement('p',{
+            }, 'Học ReactJS từ cơ bản đến nâng cao')
+        )
+
+        //get root element
+
+        const root = document.getElementById('root')
+
+        //React-DOM -> render UI
+        ReactDOM.render(postItem, root)
+    </script>
+  </body>
+</html>

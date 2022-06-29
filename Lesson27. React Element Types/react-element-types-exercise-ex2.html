@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="text/babel">
+
+const root = document.getElementById('root')
+
+        function PostItem() {
+            return ( 
+                <div className="post-item">
+                    <img src="https://files.fullstack.edu.vn/f8-prod/blog_posts/1671/61b6368a3a089.jpg" alt="" />
+                    <h2 className="post-title">Thời gian và Động lực</h2>
+                    <p className="post-description">Có lẽ cũng rất lâu rồi mà tôi chưa đụng đến thứ được gọi là "timetable". Hay dân dã hơn thì người ta hay gọi là "Lịch thường nhật",...</p>
+                    <p className='post-public'>6 tháng trước·6 phút đọc</p>
+                </div>
+            )
+        }
+        const postsList = (
+            <div className="posts-list">
+                <PostItem />
+            </div>
+        )
+
+        ReactDOM.render(postsList, root)
+    </script>
+  </body>
+</html>

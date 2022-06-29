@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- Props(đạo cụ) là object chứa nhữung thuộc tính mô t ả cho Reach Element mà chúng ta tạo ra
+
+        Props
+
+        - Eeact elements
+            - Sử dụng giống như với attribute của thẻ HTML
+            - 2 props class, for => className, htmlFor
+            - Phải tuân theo quy ước co sẵn 
+        - React Componnent
+            - Sử dụng props giống như đối số cho function
+            - Tụ do đặt tên props
+                - Đặt theo camelCase
+                - Có thể bao gồn dấu ạch ngang
+
+        - Chú ý:
+            - Props "key là props đặc biệt" dùng khi đưa react component vào array
+            - Props cơ bản là đối số của Component
+                => Props có thể là bất cứ kiểu dữ liệu gì 
+            - Sử dụng destructuring
+    -->
+    <div id="root"></div>
+    <script type="text/babel">
+        
+        function PostItem({image, title, description,publishAt, callback=()=>{}}){
+            callback()
+            return(
+                <div className="post-item">
+                    <img src={image} alt={title}/>
+                    <h2 className="post-title">{title}</h2>
+                    <h2 className="post-title">{description}</h2>
+                    <p className="post-publish">{publishAt}</p>
+                    </div>
+            )
+        }
+
+        function App(){
+            return(
+                <div id="wrapper">
+                    <PostItem
+                        title="1 C#.Net Tương tác với file Excel"
+                        image="https://www.gravatar.com/avatar/aa37420a993d268a29602eb2ce9463dc?s=80"
+                        description="1 Bạn có kiến thức ngôn ngữ c#"
+                        publishAt="1 Một ngày trước"
+                        data={[{a:1}, {b:200}]}
+                        callback={()=>{}}
+                        
+
+                    />
+                    <PostItem
+                        title="2 C#.Net Tương tác với file Excel"
+                        image="https://www.gravatar.com/avatar/aa37420a993d268a29602eb2ce9463dc?s=80"
+                        description="2 Bạn có kiến thức ngôn ngữ c#"
+                        publishAt="2 Một ngày trước"
+                    />
+                    <PostItem
+                        title="3 C#.Net Tương tác với file Excel"
+                        image="https://www.gravatar.com/avatar/aa37420a993d268a29602eb2ce9463dc?s=80"
+                        description="3 Bạn có kiến thức ngôn ngữ c#"
+                        publishAt= "3 Một ngày trước"
+                    />
+                    </div>
+            )
+        }
+
+        ReactDOM.render(<App/>, document.getElementById('root') )
+    </script>
+  </body>
+</html>

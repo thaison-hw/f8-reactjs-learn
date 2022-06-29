@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+    crossorigin
+    src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.production.min.js"
+  ></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        const helloItem = React.createElement('h1',{
+          title:'hello',
+          className:'heading'
+        },'Hello guys!')
+        document.getElementById('root')
+        ReactDOM.render(helloItem, root)
+    </script>
+</body>
+</html>
+
